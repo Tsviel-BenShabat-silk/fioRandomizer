@@ -6,12 +6,15 @@ from io_runner import IORunner
 
 
 def main(args):
+    print("Estimating the delay time it takes for fio to start running...")
     checker = IOActivityChecker(device=args.device)
     runner = IORunner()
     stats_maker = IOStatistics(checker, runner)
 
     stats = stats_maker.gather_statistics(num_iterations=15, num_jobs=args.jobs, device=args.device)
     median_delay = stats[args.jobs][1]
+
+    print("The assessed delay time for fio to start running is:", median_delay)
 
     fio_gen = FioRandomWalk(
         iops_mean=args.iops_mean,
