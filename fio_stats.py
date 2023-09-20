@@ -7,7 +7,7 @@ import re
 from io_runner import IORunner
 
 
-class IOActivityChecker:
+class IOActivityChecker:  # FIXME - this class is not os agnostic
     """
     This class checks for IO activity by inspecting /proc/diskstats.
     """
