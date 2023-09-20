@@ -34,9 +34,15 @@ Replace `main_script_name.py` with the actual name of your script.
 
 ### Parameters
 
-- `-d` or `--device`: The device name or drive letter to be tested. On Linux, it could be something like 'nvme0n1p5'. On Windows, it could be a drive letter like 'C'.
-- `-j` or `--jobs`: The number of jobs or threads for FIO to use. Defaults to `1`.
-- `--readonly`: Set this flag to run FIO in read-only mode.
+- `--device`: Specifies the device to be tested. The input format should be the device name for Linux (e.g., "nvme0n1p5") or the drive letter for Windows (e.g., "C:").
+  
+- `--jobs`: (Optional) Number of jobs to run in parallel. Default is `1`.
+
+- `--output-dir`: (Optional) Directory where the output logs and results will be saved.
+
+- `--readonly`: (Optional) Determines if the `fio` test will be run in read-only mode. Accepts `True` or `False` values. Default is `True`.
+
+- `--random-seed`: (Optional) Seed for the random number generator to ensure reproducibility. Default is `1`.
 
 ### Examples:
 
@@ -56,7 +62,7 @@ The output will vary based on the provided inputs and the nature of the random w
 
 ## Limitations
 
-- Current simulation parameters like block sizes and IOPS rate bounds are fixed but can be adjusted in the source code.
+- Current simulation parameters like block sizes and IOPS rate bounds are fixed.
 
 ## Contributing
 
