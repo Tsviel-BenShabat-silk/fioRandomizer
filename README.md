@@ -30,7 +30,6 @@ cd [repository_directory]
 ```bash
 python main_script_name.py -d DEVICE_NAME -j NUMBER_OF_JOBS
 ```
-Replace `main_script_name.py` with the actual name of your script.
 
 ### Parameters
 
@@ -48,12 +47,12 @@ Replace `main_script_name.py` with the actual name of your script.
 
 For a Linux device with 4 jobs in read-only mode:
 ```bash
-python main_script_name.py -d nvme0n1p5 -j 4 --readonly
+python main_script_name.py --device nvme0n1p5 --jobs 4
 ```
 
-For a Windows device (drive C) with 1 job:
+For a Windows device (drive C) with 1 job in read-write mode:
 ```bash
-python main_script_name.py -d C
+python main_script_name.py --device 1 --jobs 1 --write-enabled
 ```
 
 ## Understanding the Output
@@ -69,5 +68,3 @@ The output will vary based on the provided inputs and the nature of the random w
 Contributions are welcome! Please submit a pull request or open an issue to discuss potential changes/additions.
 
 ---
-
-Replace placeholders like `[repository_url]` and `[repository_directory]` with appropriate values for your project. Adjust any other details as per your project's requirements.
