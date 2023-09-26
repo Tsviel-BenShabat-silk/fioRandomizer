@@ -28,7 +28,7 @@ cd [repository_directory]
 
 2. Run the main script using the following command:
 ```bash
-python main_script_name.py -d DEVICE_NAME -j NUMBER_OF_JOBS
+python main_script_name.py --device DEVICE_NAME --jobs NUMBER_OF_JOBS
 ```
 
 ### Parameters
