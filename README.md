@@ -61,9 +61,6 @@ For a Windows device (drive C) with 1 job in read-write mode:
 python main.py --device C: --jobs 1 --write-enable
 ```
 
-## Understanding the Output
-
-The output will provide insights on the delay time it takes for FIO to start running and the resulting simulation from the provided parameters.
 
 ## Limitations
 
