@@ -55,7 +55,7 @@ class FioRandomWalk:
         """
         nudges = np.random.normal(0, 0.01, 8)  # Generate small nudges for probabilities
         new_probs = self.probs + nudges
-        new_probs = np.clip(new_probs, 0.01, 0.3)  # Ensure probabilities are between 1% and 30%
+        # new_probs = np.clip(new_probs, 0.01, 0.3)  # Ensure probabilities are between 1% and 30%
         self.probs = new_probs / new_probs.sum()  # Normalize to ensure they sum to 1
 
     def _nudge_iops(self):
