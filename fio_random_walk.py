@@ -100,11 +100,11 @@ class FioRandomWalk:
             iops = str(iops * self.read_write_ratio[0]) + "," + str(iops * self.read_write_ratio[1])
         # Determine the platform and adjust the filename accordingly
         if sys.platform.startswith("linux"):
-            filename = f"/dev/{self.device}"
+            filename = f"/dev/mapper/{self.device}"
         elif sys.platform.startswith("win"):
             filename = fr"\\.\PhysicalDrive{self.device}"  # Assuming drive letter for Windows, e.g., C:
         elif sys.platform.startswith("darwin"):
-            filename = f"/dev/{self.device}"  # This might need adjustment for macOS
+            filename = f"/dev/mapper/{self.device}"  # This might need adjustment for macOS
         else:
             filename = self.device
         bssplit = ':'.join(f"{bs}/{prob:.2f}" for bs, prob in zip(self.block_sizes, self.probs * 100))
